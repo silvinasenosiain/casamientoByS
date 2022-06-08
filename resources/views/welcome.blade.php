@@ -117,8 +117,8 @@
                         <p class="lead mb-0" style= "font-size: 1.5rem">Adoramos a sus hijos, también creemos que les vendría bien una noche libre. Por eso decidimos que sea solo de adultos. Deseamos que no sea un obstáculo para contar con su presencia.</p><br>
                     </div>
 
-                    <button class="bton" href="{{ route('home')}}">¿Nos confirmas?</button>
-                    <p  class="lead mb-0" style="font-size:1.7rem ">Vestimenta: Elegante</p>
+                    <a href="{{ route('invitados.buscar')}}"><button class="bton">¿Nos confirmas?</button></a>
+                    <p class="lead mb-0" style="font-size:1.7rem ">Vestimenta: Elegante</p>
                     
             </div>
         </section>

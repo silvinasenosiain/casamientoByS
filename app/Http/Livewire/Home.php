@@ -7,10 +7,13 @@ use DB;
 use Livewire\Component;
 use App\Models\Persona;
 use App\Models\Invitacions;
+use App\Models\Invitacionesadicionals;
 
 class Home extends Component
 {
+    public $invitacion_id;
     public $apellido, $nombre, $telefono;
+    public $apellidoi, $nombrei, $telefonoi;
     public $buscador;
 
     public function render()
@@ -62,6 +65,47 @@ class Home extends Component
         }
 
         $this->reset();
-        $this->dispatchBrowserEvent('modal-down', []);
+    }
+
+    public function agregar_invitado($invitacion_id)
+    {
+        $this->invitacion_id = $invitacion_id;
+    }
+
+    public function guardar_invitado()
+    {
+        $this->validate([
+            'apellidoi' => 'required|max:255',
+            'nombrei' => 'required|max:255',
+            'telefonoi' => 'required',
+        ]);
+
+        $existe = Persona::where('telefono', $this->telefonoi)->count();
+
+        if ($existe > 0) {
+            $persona = Persona::where('telefono', $this->telefonoi)->first();
+            Persona::where('telefono', $this->telefonoi)->update([
+                'apellido' => $this->apellidoi,
+                'nombre' => $this->nombrei,
+            ]);
+        } else {
+            $persona = Persona::create([
+                'apellido' => $this->apellidoi,
+                'nombre' => $this->nombrei,
+                'telefono' => $this->telefonoi
+            ]);
+        }
+
+        $invitado = Invitacionesadicionals::where('persona_id', $persona->id)->where('invitacion_id', $this->invitacion_id)->count();
+
+        if ($invitado == 0) {
+            $invitado = Invitacionesadicionals::create([
+                'persona_id' => $persona->id,
+                'invitacion_id' => $this->invitacion_id,
+                'estado' => 'pendiente'
+            ]);
+        }
+
+        $this->reset('apellidoi', 'nombrei', 'telefonoi');
     }
 }

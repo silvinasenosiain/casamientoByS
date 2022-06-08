@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    HomeController,
+    InvitacionesController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Busqueda de invitaciones
+Route::get('/buscar-invitacion', [InvitacionesController::class, 'buscar_invitacion'])->name('invitados.buscar');
+
 Auth::routes();
 //Ruta de pagina principal
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
+Route::get('/home', [HomeController::class, 'home'])->name('home');
