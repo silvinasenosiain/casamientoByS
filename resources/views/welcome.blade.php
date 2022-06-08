@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Policonsultorio SUIZA</title>
+        <link rel="icon" href="assets/img/anillos-de-boda.png">
+        <title>¡NOS CASAMOS!</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -64,7 +65,7 @@
                     <br>
                     <h3>18:00hs - LaLola Multiespacio</h3>
                     <br>
-                    <h2>SILVI & BELÉN</h2>
+                    <h1>SILVI & BELÉN</h1>
                 </div>
             </div>
             <br>
