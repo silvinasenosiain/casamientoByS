@@ -27,7 +27,15 @@
             <tr>
                 <td>{{$invitacion->apellido}}</td>
                 <td>{{$invitacion->nombre}}</td>
-                <td>{{$invitacion->estado}}</td>
+                <td>
+                    @if($invitacion->estado == 'pendiente')
+                    Pendiente
+                    @elseif($invitacion->estado == 'aceptado')
+                    Aceptado
+                    @else
+                    Rechazado
+                    @endif
+                </td>
                 <td>
                 @php
                 $invitados = App\Models\Invitacionesadicionals::where('invitacion_id', $invitacion->id)->count();
