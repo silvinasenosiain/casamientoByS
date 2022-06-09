@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 //Busqueda de invitaciones
 Route::get('/buscar-invitacion', [InvitacionesController::class, 'buscar_invitacion'])->name('invitados.buscar');
+Route::get('/invitacion/{codigo}', [InvitacionesController::class, 'invitacion'])->name('invitados.invitacion');
 
 Auth::routes();
 //Ruta de pagina principal
