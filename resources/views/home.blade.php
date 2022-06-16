@@ -7,7 +7,7 @@
             <div class="card mt-3">
                 <div class="card-header">{{ __('Listado de invitados') }}</div>
                 <div class="card-body">
-                    <livewire:home />
+                    @livewire('home')
                 </div>         
             </div>
         </div>

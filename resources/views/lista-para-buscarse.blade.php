@@ -16,7 +16,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=API-KEY"></script> 
-
+        @livewireStyles
     </head>
     <body>
         <!-- Navigation-->
@@ -73,5 +73,6 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        @livewireScripts
     </body>
 </html>
