@@ -15,6 +15,8 @@ class Home extends Component
     public $apellido, $nombre, $telefono;
     public $apellidoi, $nombrei, $telefonoi;
     public $buscador;
+    public $pendientes, $aceptados, $rechazados, $total;
+    public $invitados = [];
 
     public function render()
     {
@@ -26,6 +28,28 @@ class Home extends Component
         })->paginate(15);
 
         return view('livewire.home', compact('invitaciones'));
+    }
+
+    public function mount()
+    {
+        $this->contar_invitaciones();
+    }
+
+    public function contar_invitaciones()
+    {
+        $pendientes = Invitacions::where('estado', 'pendiente')->count();
+        $pendientesi = Invitacionesadicionals::where('estado', 'pendiente')->count();
+        $this->pendientes = $pendientes + $pendientesi;
+
+        $aceptados = Invitacions::where('estado', 'aceptada')->count();
+        $aceptadosi = Invitacionesadicionals::where('estado', 'aceptada')->count();
+        $this->aceptados = $aceptados + $aceptadosi;
+
+        $rechazados = Invitacions::where('estado', 'rechazada')->count();
+        $rechazadosi = Invitacionesadicionals::where('estado', 'rechazada')->count();
+        $this->rechazados = $rechazados + $rechazadosi;
+
+        $this->total = $this->pendientes + $this->aceptados + $this->rechazados;
     }
 
     public function guardar_invitacion()
@@ -107,5 +131,10 @@ class Home extends Component
         }
 
         $this->reset('apellidoi', 'nombrei', 'telefonoi');
+    }
+
+    public function detalle_invitacion($invitacion_id)
+    {
+        $this->invitados = Invitacionesadicionals::where('invitacion_id', $invitacion_id)->get();
     }
 }

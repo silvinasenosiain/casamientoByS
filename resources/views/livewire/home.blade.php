@@ -1,6 +1,7 @@
 <div>
     @include('modales.modal-agregar-invitacion')
     @include('modales.modal-agregar-invitado')
+    @include('modales.modal-detalle-invitacion')
     <div class="container">
         <div class="row">
             <div class="col-lg-4 p-0"></div>
@@ -30,10 +31,10 @@
                 <td>
                     @if($invitacion->estado == 'pendiente')
                     Pendiente
-                    @elseif($invitacion->estado == 'aceptado')
-                    Aceptado
+                    @elseif($invitacion->estado == 'aceptada')
+                    Aceptada
                     @else
-                    Rechazado
+                    Rechazada
                     @endif
                 </td>
                 <td>
@@ -43,12 +44,26 @@
                 {{$invitados}}
                 </td>
                 <td>
+                @php
+                $invitados
+                @endphp
+                </td>
+                <td>
                     <div class="btn-toolbar" role="toolbar">
+                        @if($invitacion->estado == 'pendiente')
                         <div class="btn-group">
                             <button type="button" wire:click="agregar_invitado({{$invitacion->id}})" data-bs-toggle="modal" data-bs-target="#m-agregar-invitado" class="btn btn-outline-primary">
                                 Agregar invitado
-                            </button>   
+                            </button>  
                         </div>
+                        @endif
+                        @if($invitados > 0)
+                        <div class="btn-group" style = "margin-left:10px;">
+                            <button type="button" wire:click="detalle_invitacion({{$invitacion->id}})" data-bs-toggle="modal" data-bs-target="#m-detalle" class="btn btn-outline-secondary">
+                                Detalle
+                            </button>  
+                        </div>
+                        @endif
                     </div>  
                 </td>
             </tr>
@@ -58,5 +73,9 @@
             </tr>
             @endforelse
         </tbody>
-    </table>    
+    </table>   
+    Pendientes: {{$pendientes}}<br>
+    Aceptados: {{$aceptados}}<br>
+    Rechazados: {{$rechazados}} <br>
+    Total: {{$total}}
 </div>
