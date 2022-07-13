@@ -63,7 +63,7 @@
             <div class="col-lg-4">
                 <div class="features-icons-item">
                     <br>
-                    <h3>18:00hs - LaLola Multiespacio</h3>
+                    <h3>18:15hs - LaLola Multiespacio</h3>
                     <br>
                     <h1>SILVI & BELÉN</h1>
                 </div>
