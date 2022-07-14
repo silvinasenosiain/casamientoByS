@@ -21,7 +21,7 @@
     <body>
         <!-- Navigation-->
         <div id="app">
-        <nav class="navbar-expand-md navbar-light section-rosado fixed-top">
+        <nav class="navbar-expand-md navbar-light section-rosado fixed-top  col-sm-12 col-md-12">
             <div class="container">
                 
                 <div class="" id="navbarSupportedContent">
@@ -63,7 +63,7 @@
             <div class="col-lg-4">
                 <div class="features-icons-item">
                     <br>
-                    <h3>18:15hs - LaLola Multiespacio</h3>
+                    <h2>18:15hs - LaLola Multiespacio</h2>
                     <br>
                     <h1>SILVI & BELÉN</h1>
                 </div>
@@ -109,13 +109,13 @@
                 <h1>LA FIESTA</h1><br><br>
                     <div class="order-lg-2 my-auto showcase-text row">
                         <div class="col-sm-6 ">
-                            <h2 >¿Cuándo?</h2><br><p>24-sept 18:00hs</p>
+                            <h2 >¿Cuándo?</h2><br><p>24-sept 18:15hs</p>
                         </div>
                         <div class="col-sm-6 " style="border-left: 1px solid;">
                             <h2>¿Dónde?</h2><br><p>LaLola Multiespacio</p><p>Acceso Perichón - km 1,5</p><p>Corrientes Capital</p></div>
                     </div>
                     <div class="order-lg-2 my-auto showcase-text"><br>
-                        <p class="lead mb-0" style= "font-size: 1.5rem">Adoramos a sus hijos, también creemos que les vendría bien una noche libre. Por eso decidimos que sea solo de adultos. Deseamos que no sea un obstáculo para contar con su presencia.</p><br>
+                        <p class="lead mb-0" style= "font-size: 1.5rem"><b>Adoramos a sus hijos, también creemos que les vendría bien una noche libre. Por eso decidimos que sea solo de adultos. Deseamos que no sea un obstáculo para contar con su presencia.</b></p><br>
                     </div>
 
                     <a href="{{ route('invitados.buscar')}}"><button class="bton">¿Nos confirmas?</button></a>
