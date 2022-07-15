@@ -89,6 +89,7 @@ class Home extends Component
         }
 
         $this->reset();
+        $this->contar_invitaciones();
     }
 
     public function agregar_invitado($invitacion_id)
@@ -131,10 +132,12 @@ class Home extends Component
         }
 
         $this->reset('apellidoi', 'nombrei', 'telefonoi');
+        $this->contar_invitaciones();
     }
 
     public function detalle_invitacion($invitacion_id)
     {
         $this->invitados = Invitacionesadicionals::where('invitacion_id', $invitacion_id)->get();
+        $this->contar_invitaciones();
     }
 }
