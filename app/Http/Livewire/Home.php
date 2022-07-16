@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 use Illuminate\Support\Str;
 use DB;
 
+use Livewire\WithPagination;
 use Livewire\Component;
 use App\Models\Persona;
 use App\Models\Invitacions;
@@ -11,6 +12,7 @@ use App\Models\Invitacionesadicionals;
 
 class Home extends Component
 {
+    use WithPagination;
     public $invitacion_id;
     public $apellido, $nombre, $telefono;
     public $apellidoi, $nombrei, $telefonoi;
@@ -25,8 +27,8 @@ class Home extends Component
         ->where(function ($query) {
             $query->where(DB::raw('CONCAT_WS(" ", personas.apellido, personas.nombre)'), 'LIKE', '%' .$this->buscador. '%')
             ->Orwhere('personas.telefono', 'LIKE', '%' .$this->buscador. '%');
-        })->paginate(15);
-
+        })->paginate(50);
+        $invitaciones->withPath('/home');
         return view('livewire.home', compact('invitaciones'));
     }
 
