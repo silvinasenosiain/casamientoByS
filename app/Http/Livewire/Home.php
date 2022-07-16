@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 use Illuminate\Support\Str;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 use Livewire\WithPagination;
 use Livewire\Component;
@@ -13,6 +13,7 @@ use App\Models\Invitacionesadicionals;
 class Home extends Component
 {
     use WithPagination;
+
     public $invitacion_id;
     public $apellido, $nombre, $telefono;
     public $apellidoi, $nombrei, $telefonoi;
@@ -59,16 +60,15 @@ class Home extends Component
         $this->validate([
             'apellido' => 'required|max:255',
             'nombre' => 'required|max:255',
-            'telefono' => 'required',
         ]);
 
         $code = Str::random(8);
 
-        $existe = Persona::where('telefono', $this->telefono)->count();
-
+        $existe = Persona::where('apellido', $this->apellido)->where('nombre', $this->nombre)->count();
+  
         if ($existe > 0) {
-            $persona = Persona::where('telefono', $this->telefono)->first();
-            Persona::where('telefono', $this->telefono)->update([
+            $persona = Persona::where('apellido', $this->apellido)->where('nombre', $this->nombre)->first();
+            Persona::where('id', $persona->id)->update([
                 'apellido' => $this->apellido,
                 'nombre' => $this->nombre,
             ]);
@@ -104,14 +104,13 @@ class Home extends Component
         $this->validate([
             'apellidoi' => 'required|max:255',
             'nombrei' => 'required|max:255',
-            'telefonoi' => 'required',
         ]);
 
-        $existe = Persona::where('telefono', $this->telefonoi)->count();
+        $existe = Persona::where('apellido', $this->apellidoi)->where('nombre', $this->nombrei)->count();
 
         if ($existe > 0) {
-            $persona = Persona::where('telefono', $this->telefonoi)->first();
-            Persona::where('telefono', $this->telefonoi)->update([
+            $persona = Persona::where('apellido', $this->apellidoi)->where('nombre', $this->nombrei)->first();
+            Persona::where('id', $persona->id)->update([
                 'apellido' => $this->apellidoi,
                 'nombre' => $this->nombrei,
             ]);
