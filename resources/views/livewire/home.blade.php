@@ -74,6 +74,7 @@
             @endforelse
         </tbody>
     </table>   
+    {{$invitaciones->links('vendor.livewire.simple-bootstrap')}}
     Pendientes: {{$pendientes}}<br>
     Aceptados: {{$aceptados}}<br>
     Rechazados: {{$rechazados}} <br>
