@@ -2,8 +2,8 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">¡Hola {{$persona}}!</h5>
-            <p class="card-text">Con inmensa alegría te invitamos a celebrar nuestra boda. 
-            Te esperamos el 24 de Septiembre, a las 18:15, en LaLola Multiespacio para celebrar nuestro amor junto a vos.</p>
+            <p class="card-text">Con inmensa alegría te invitamos a celebrar nuestro amor. 
+            Te esperamos el sábado 24 de Septiembre a las 18:15 hs, en LaLola Multiespacio. ¿Venis/vienen?</p>
         </div>
         @if(count($invitados) > 0)
         <span class = "text-center text-sm">Personas que fueron invitadas junto a vos</span>

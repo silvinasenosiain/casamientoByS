@@ -1,8 +1,16 @@
+
 <div 
     x-data="{ 
         buscar:@entangle('buscar'),
         autoComplete:true, 
     }">
+    <div class="container">
+        <div class="row">
+            <div class="">
+                <p>Ingresá tu Apellido y Nombre para encontrarte en la lista</p>
+            </div>
+        </div>
+    </div>
     <div class="input-box">
         <input wire:model="buscar" type="text" 
         @click="autoComplete=true"
@@ -12,7 +20,8 @@
         class="form-control"
         style="background-color:white;">
         <i class="fa fa-search"></i>           
-    </div>   
+    </div> 
+      
     <template x-if="autoComplete" x-transition.opacity> 
         <div class="shadow rounded px-3 pt-3 pb-0 orange lighten-5">
             @if(count($invitaciones) > 0)

@@ -53,8 +53,8 @@ return [
     | Examples: "/assets", "myurl.com/app".
     |
     */
-
     'asset_url' => env('APP_URL', 'http://localhost'),
+
 
     /*
     |--------------------------------------------------------------------------

@@ -119,6 +119,9 @@
                     </div>
 
                     <a href="{{ route('invitados.buscar')}}"><button class="bton">¿Nos confirmas?</button></a>
+                    <div class="order-lg-2 my-auto showcase-text"><br>
+                        <p class="lead mb-0" style= "font-size: 1.5rem"><b><em>Fecha límite:</em> Miércoles 24 de agosto </b></p><br>
+                    </div>
                     <p class="lead mb-0" style="font-size:1.7rem ">Vestimenta: Elegante</p>
                     
             </div>
@@ -160,10 +163,10 @@
                 <br><br>
                 <h1>REGALO</h1>
                     <div class="order-lg-2 my-auto showcase-text"><br>
-                        <p  class="lead mb-0" style="font-size:1.7rem "">Nuestro mayor obsequio es que compartas con nosotras esa día tan soñado. Si de todas formas querés hacerlo, podes ayudarnos con nuestra luna de miel. Te dejamos las cuentas o ese día habrá una caja con sobres.</p>
+                        <p  class="lead mb-0" style="font-size:1.7rem "">Nuestro mayor obsequio es que compartas con nosotras ese día tan soñado. Si de todas formas querés hacerlo, podes ayudarnos con nuestra luna de miel. Te dejamos las cuentas o ese día habrá una caja con sobres.</p>
                     </div>
 
-                    <p  class="lead mb-0" style="font-size:1.5rem ">Cuenta de Brubank<br>Titular: Silvina Senosiain<br>CBU: 1430001713028506770016<br>Alias: silvinasenosiain<br><br>​Cuenta de MercadoPago<br>​Titular: Silvina Senosiain<br>CVU: 0000003100037706581928<br>Alias: silvi.senosiain.mp</p>
+                    <p  class="lead mb-0" style="font-size:1.5rem "><br><em>Cuenta de Brubank</em><br>Titular: Silvina Senosiain<br>CBU: 1430001713028506770016<br>Alias: silvinasenosiain<br><br><em>​Cuentas de MercadoPago</em><br><br>​Titular: Silvina Senosiain<br>CVU: 0000003100037706581928<br>Alias: silvi.senosiain.mp<br><br>​Titular: Belén Ramirez<br>CVU: 0000003100026796839424<br>Alias: gbelenramirez.mp</p>
                 </div>
         </section>
         <!-- Bootstrap core JS-->
