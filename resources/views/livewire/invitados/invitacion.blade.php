@@ -3,11 +3,9 @@
         <div class="card-body">
             <h5 class="card-title">¡Hola {{$persona}}!</h5>
             <p class="card-text">Con inmensa alegría te invitamos a celebrar nuestro amor. 
-            Te esperamos el sábado 24 de Septiembre a las 18:15 hs, en LaLola Multiespacio. ¿Venis/vienen?</p>
+            Te esperamos el sábado 24 de Septiembre a las 18:15 hs, en LaLola Multiespacio. @if(count($invitados)>0)¿Vienen?@else¿Venís?@endif</p>
         </div>
-        @if(count($invitados) > 0)
-        <span class = "text-center text-sm">Personas que fueron invitadas junto a vos</span>
-        @endif
+        <span class = "text-center text-sm">Personas que fueron invitadas junto a vos: <strong>{{count($invitados)}}</strong></span>
         <ul class="list-group list-group-flush">
             @forelse($invitados as $invitado)
             <div class = "row mt-3 mb-3">
